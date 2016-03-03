@@ -8,7 +8,7 @@ http://www.instructables.com/id/Arduino-Motor-Shield-Tutorial/
 
 *************************************************************/
 
-int delaylegnth = 12;
+int delaylegnth = 8;
 
 void setup() {
   
