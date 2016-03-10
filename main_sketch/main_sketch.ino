@@ -1,6 +1,19 @@
 //stepper variables
 int delaylegnth = 20;
 
+
+//Commands
+    //f = run ramrod forwards
+//    b = run ramrod backwards
+ //   up = angle motor all the way up
+ //   down = angle motor all the way down
+ //   u = angle motor up a little
+//    d = angle motor down a little
+  //  cmp = run compressor
+ //   vlv = open valve
+ //   h = all off
+    
+
 void setup() {
   //Stepper Motor
         //establish motor direction toggle pins
@@ -29,7 +42,10 @@ void loop(){
 // Stepper Motor
             //Forward Full Stroke
                        if (value == "f") {
-                            
+                              int n=0;
+                              while (n < 10) {
+                                n++;
+                              
                               //A forwards
                                 digitalWrite(9, LOW);  //ENABLE CH A
                                 digitalWrite(8, HIGH); //DISABLE CH B
@@ -54,91 +70,39 @@ void loop(){
                                 digitalWrite(13, HIGH);   //Sets direction of CH B
                                 analogWrite(11, 255);   //Moves CH B 
                                 delay(delaylegnth);
-                                    
+                              } 
                        }
           //Backwards Full Stroke        
                        if (value == "b") {
+                              int n=0;
+                              while (n < 10) {
+                                n++;
                             
-                              //A forwards
-                                digitalWrite(9, LOW);  //ENABLE CH A
-                                digitalWrite(8, HIGH); //DISABLE CH B
-                                digitalWrite(12, HIGH);   //Sets direction of CH A
-                                analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth);
-                              // B backwards  
-                                digitalWrite(9, HIGH);  //DISABLE CH A
-                                digitalWrite(8, LOW); //ENABLE CH B
-                                digitalWrite(13, LOW);   //Sets direction of CH B
-                                analogWrite(11, 255);   //Moves CH B
-                                delay(delaylegnth);
                               //A backwards
                                 digitalWrite(9, LOW);  //ENABLE CH A
                                 digitalWrite(8, HIGH); //DISABLE CH B
                                 digitalWrite(12, LOW);   //Sets direction of CH A
                                 analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth); 
-                              //B Forwards
+                                delay(delaylegnth);
+                              // B forwards  
                                 digitalWrite(9, HIGH);  //DISABLE CH A
                                 digitalWrite(8, LOW); //ENABLE CH B
                                 digitalWrite(13, HIGH);   //Sets direction of CH B
-                                analogWrite(11, 255);   //Moves CH B 
-                                delay(delaylegnth);       
-                       }
-           //Forward Short    
-                       if (value == "fs") {
-                            
+                                analogWrite(11, 255);   //Moves CH B
+                                delay(delaylegnth);
                               //A forwards
                                 digitalWrite(9, LOW);  //ENABLE CH A
                                 digitalWrite(8, HIGH); //DISABLE CH B
                                 digitalWrite(12, HIGH);   //Sets direction of CH A
                                 analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth);
-                              // B backwards  
+                                delay(delaylegnth); 
+                              //B Backwards
                                 digitalWrite(9, HIGH);  //DISABLE CH A
                                 digitalWrite(8, LOW); //ENABLE CH B
                                 digitalWrite(13, LOW);   //Sets direction of CH B
-                                analogWrite(11, 255);   //Moves CH B
-                                delay(delaylegnth);
-                              //A backwards
-                                digitalWrite(9, LOW);  //ENABLE CH A
-                                digitalWrite(8, HIGH); //DISABLE CH B
-                                digitalWrite(12, LOW);   //Sets direction of CH A
-                                analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth); 
-                              //B Forwards
-                                digitalWrite(9, HIGH);  //DISABLE CH A
-                                digitalWrite(8, LOW); //ENABLE CH B
-                                digitalWrite(13, HIGH);   //Sets direction of CH B
                                 analogWrite(11, 255);   //Moves CH B 
                                 delay(delaylegnth);       
-                       }
-           //Backwards Short       
-                       if (value == "bs") {
-                            
-                              //A forwards
-                                digitalWrite(9, LOW);  //ENABLE CH A
-                                digitalWrite(8, HIGH); //DISABLE CH B
-                                digitalWrite(12, HIGH);   //Sets direction of CH A
-                                analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth);
-                              // B backwards  
-                                digitalWrite(9, HIGH);  //DISABLE CH A
-                                digitalWrite(8, LOW); //ENABLE CH B
-                                digitalWrite(13, LOW);   //Sets direction of CH B
-                                analogWrite(11, 255);   //Moves CH B
-                                delay(delaylegnth);
-                              //A backwards
-                                digitalWrite(9, LOW);  //ENABLE CH A
-                                digitalWrite(8, HIGH); //DISABLE CH B
-                                digitalWrite(12, LOW);   //Sets direction of CH A
-                                analogWrite(3, 255);   //Moves CH A
-                                delay(delaylegnth); 
-                              //B Forwards
-                                digitalWrite(9, HIGH);  //DISABLE CH A
-                                digitalWrite(8, LOW); //ENABLE CH B
-                                digitalWrite(13, HIGH);   //Sets direction of CH B
-                                analogWrite(11, 255);   //Moves CH B 
-                                delay(delaylegnth);       
+                              }
                        }
 
      
@@ -191,9 +155,51 @@ void loop(){
 	digitalWrite(2, LOW); //Motor stops//
 
 }
-   }
+
+//Ramrod-off
+    if(value == "s") {
+                              //A forwards
+                                digitalWrite(9, LOW);  //ENABLE CH A
+                                digitalWrite(8, HIGH); //DISABLE CH B
+                                digitalWrite(12, HIGH);   //Sets direction of CH A
+                                //analogWrite(3, 255);   //Moves CH A
+                                delay(delaylegnth);
+                              // B backwards  
+                                digitalWrite(9, HIGH);  //DISABLE CH A
+                                digitalWrite(8, LOW); //ENABLE CH B
+                                digitalWrite(13, LOW);   //Sets direction of CH B
+                                ///analogWrite(11, 255);   //Moves CH B
+                                delay(delaylegnth);
+                              //A backwards
+                                digitalWrite(9, LOW);  //ENABLE CH A
+                                digitalWrite(8, HIGH); //DISABLE CH B
+                                digitalWrite(12, LOW);   //Sets direction of CH A
+                                ///analogWrite(3, 255);   //Moves CH A
+                                delay(delaylegnth); 
+                              //B Forwards
+                                digitalWrite(9, HIGH);  //DISABLE CH A
+                                digitalWrite(8, LOW); //ENABLE CH B
+                                digitalWrite(13, HIGH);   //Sets direction of CH B
+                                ///analogWrite(11, 255);   //Moves CH B 
+                                delay(delaylegnth);
+    }
    
 }
+
+}
+
+
+
+
+///int i =5;
+  //  while (i > 0) {
+     // Serial.println(i);
+    //  i--;
+    //  if (i == 1 then) {
+       // Serial.println("All done!");
+     //   }
+  //  }
+   // delay(1000);
 
 
 
