@@ -41,3 +41,5 @@ so..."""
 #will try it tomorrow
 #stackexchange suggests that if cycling through steps too fast, motor will just
 #sit there and vibrate
+
+#high-torque mode means energize two coils at the same time
