@@ -26,7 +26,7 @@ digitalWrite(brakeB, LOW);
   // initialize the serial port:
 Serial.begin(9600);
 // set the motor speed (for multiple steps only):
-myStepper.setSpeed(40);
+myStepper.setSpeed(8);
 }
 void loop() {
    myStepper.step(200);

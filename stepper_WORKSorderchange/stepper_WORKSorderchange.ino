@@ -3,7 +3,7 @@ Motor Shield Stepper
 
 *************************************************************/
 
-int delaylegnth = 185.18;
+int delaylegnth = 21.5;
 
 void setup() {
 
@@ -30,7 +30,7 @@ void loop(){
   digitalWrite(8, LOW); //ENABLE CH B
   digitalWrite(13, LOW);   //Sets direction of CH B
   analogWrite(11, 255);   //Moves CH B
-  delay(delaylegnth);
+  delay(delaylegnth-2);
 //A backwards
   digitalWrite(9, LOW);  //ENABLE CH A
   digitalWrite(8, HIGH); //DISABLE CH B

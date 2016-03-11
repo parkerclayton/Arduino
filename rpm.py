@@ -14,7 +14,7 @@ def rpm(dl):
 
   #alternative
   rpm1=((f*alpha)/360.00)*60.00
-  print('stepper rpm from suggested frequency: %s') %rpm1
+  #print('stepper rpm from suggested frequency: %s') %rpm1
 
   #notes
 
